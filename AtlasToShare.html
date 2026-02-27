@@ -1499,17 +1499,24 @@ rc();
   // Initialize timestamp immediately (helps on load)
   touchUpdated();
 
+document.addEventListener('DOMContentLoaded', () => {
   // LO Settings link (footer)
-  const _loLink = $("loLink");
-  if(_loLink){
-    _loLink.addEventListener("click", (ev)=>{ ev.preventDefault(); openLO(); });
+  const _loLink = document.getElementById('loLink');
+  if (_loLink) {
+    _loLink.addEventListener('click', (ev) => {
+      ev.preventDefault();
+      openLO();
+    });
   }
+
   // close modal when clicking outside the card
-  const _loModal = $("loModal");
-  if(_loModal){
-    _loModal.addEventListener("click", (ev)=>{ if(ev.target===_loModal) closeLO(); });
+  const _loModal = document.getElementById('loModal');
+  if (_loModal) {
+    _loModal.addEventListener('click', (ev) => {
+      if (ev.target === _loModal) closeLO();
+    });
   }
-})();
+});
 
 </script>
 
